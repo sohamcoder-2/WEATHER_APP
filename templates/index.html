@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather app</title>
+  <style>
+    body {
+      background: #7fffd4;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      color: #222;
+      letter-spacing: 1px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+      align-items: stretch;
+    }
+    input[type="text"] {
+      padding: 0.5rem 0.8rem;
+      border: 1px solid #b2dfdb;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+      margin-bottom: 0.0rem;
+    }
+    input[type="text"]:focus {
+      border: 1.5px solid #26a69a;
+    }
+    button {
+      background: #26a69a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+    button:hover {
+      background: #00796b;
+    }
+    .weather-info {
+      margin-top: 1.2rem;
+      font-size: 1.15rem;
+      color: #333;
+    }
+    .weather-icon {
+      margin: 1rem 0 0.5rem 0;
+    }
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.2rem 0.5rem;
+      }
+      form {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather app</h1>
+    <form action="/" method="post">
+      <input type="text" id="cityName" name="cityname" placeholder="City">
+      <input type="text" id="statename" name="statename" value="ON" placeholder="State code">
+      <input type="text" id="countryname" name="countryname" value="Canada" placeholder="Country code">
+      <button type="submit">Find</button>
+    </form>
+    {% if data %}
+      <div class="weather-info">
+        <div><strong>{{data.main}}</strong>: {{ data.description }}</div>
+        <div class="weather-icon">
+          <img src="https://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="Icon">
+        </div>
+        <div style="font-size:1.5rem; font-weight:500;">{{data.temp}}&deg;</div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
