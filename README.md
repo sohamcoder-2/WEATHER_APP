@@ -1,5 +1,4 @@
 # WEATHER_APP
 Weather-Application using flask 
 
-![imgage alt](IMG/Screenshot 2025-06-27 154142.png)
-![imgage alt](https://github.com/sohamcoder-2/EDUFLIX/blob/main/IMG/Screenshot%202025-04-19%20000631.png?raw=true)
+![imgage alt](https://github.com/sohamcoder-2/EduFlix-----Educational--Video--Platform./blob/107123511f0f0e01c202d93f334433a08af695a4/IMG/Screenshot%202025-06-27%20154142.png)
